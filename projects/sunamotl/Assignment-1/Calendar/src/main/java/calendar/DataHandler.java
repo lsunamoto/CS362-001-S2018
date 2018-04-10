@@ -232,7 +232,7 @@ public class DataHandler {
                 }
                 //Figure out which days the appointment occurs on
                 LinkedList<GregorianCalendar>  apptOccursOnDays = 
-                    getApptOccurences(appt, firstDay, lastDay);
+                    getApptOccurences(appt, lastDay, firstDay);
                 
                 if (diagnose) { 
                     System.out.println("This appointment occurs on: ");
@@ -351,7 +351,7 @@ public class DataHandler {
                 
                 //The user did specify weekly recurrence, so increment the
                 //day until it falls on a weekday the user specified
-                for (int k = 0; k < 7; k++) {
+                    for (int k = 0; k < 1; k++) {
                     nextDay.add(nextDay.DAY_OF_MONTH, 1);
                     int newDayOfWeek = nextDay.get(nextDay.DAY_OF_WEEK);
                 
