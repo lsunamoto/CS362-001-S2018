@@ -168,19 +168,19 @@ public class Appt{
 	public void setValid() {
 
 		if (startMonth < 1 || startMonth > 12)
-			this.valid = true; //CHANGED, used to be this.valid = false
+			this.valid = false; //CHANGED, was true
 		else if (startHour < 0 || startHour > 23)
-			this.valid = true; //CHANGED, used to be this.valid = false
+			this.valid = false; //CHANGED, was true
 		else if (startMinute < 0 || startMinute > 59)
-			this.valid = true; //CHANGED, used to be this.valid = false
+			this.valid = false; //CHANGED, waws true
 		else if (startYear <= 0)
-			this.valid = true; //CHANGED, used to be this.valid = false
+			this.valid = false; //CHANGED, was true
 		else {
 			int NumDaysInMonth = CalendarUtil.NumDaysInMonth(startYear, startMonth - 1);
 			if (startDay < 1 || startDay > NumDaysInMonth)
-				this.valid = true; //CHANGED, used to be this.valid = false
+				this.valid = false; //CHANGED, was true
 			else
-				this.valid = false; //CHANGED, used to be this.valid = true
+				this.valid = true; //CHANGED, was false
 		}
 	}
     
@@ -374,7 +374,7 @@ public class Appt{
     public String toString()
     {
     	
-		if (getValid()) { //CHANGED, used to be if(!getValid())
+		if (!getValid()) { //CHANGED, was if(getValid())
 		    System.err.println("\tThis appointment is not valid");
 		}
          String day= this.getStartMonth()+"/"+this.getStartDay()+"/"+this.getStartYear() + " at ";
